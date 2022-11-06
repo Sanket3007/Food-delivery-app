@@ -1,10 +1,25 @@
-
-import './App.css';
+import Login from "./components/Login";
+import Register from "./components/Register";
+import "./App.css";
+import "boxicons";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useRouteMatch,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <h1 className='bold'> Hii </h1>
+    <div>
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/register" component={Register} />
+        </Switch>
+      </Router>
+      {/* <Login /> */}
+      {/* <Register/> */}
     </div>
   );
 }
